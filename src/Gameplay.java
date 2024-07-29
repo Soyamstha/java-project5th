@@ -114,6 +114,12 @@ public class Gameplay extends JPanel implements KeyListener,ActionListener
                             {
                                 ballydir=-ballydir;
                             }
+                            if (totalBrick==0)
+                            {
+                                totalBrick=21;
+                                map=new Mapgen(3,7);
+                                repaint();
+                            }
                             break A;
                         }
                     }
