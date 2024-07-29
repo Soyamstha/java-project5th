@@ -41,7 +41,7 @@ public class Gameplay extends JPanel implements KeyListener,ActionListener
         //score
         g.setColor(Color.cyan);
         g.setFont(new Font("serif",Font.BOLD,25));
-        g.drawString("", +score,59);
+        g.drawString(""+score,59,30);
         //paddle
         g.setColor(Color.green);
         g.fillRect(playerx,550, 100, 8);
@@ -145,13 +145,9 @@ public class Gameplay extends JPanel implements KeyListener,ActionListener
     }
 
     @Override
-    public void keyPressed(KeyEvent e) {
-        
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-       if (e.getKeyCode()==KeyEvent.VK_RIGHT)
+    public void keyPressed(KeyEvent e) 
+    {
+        if (e.getKeyCode()==KeyEvent.VK_RIGHT)
        {
             if (playerx>=600)
             {
@@ -188,6 +184,11 @@ public class Gameplay extends JPanel implements KeyListener,ActionListener
                 repaint();
             }
        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+       
     }
     private void moveRight()
     {

@@ -27,11 +27,14 @@ public class Mapgen {
         {
             for (int j=0;j<map[0].length;j++)
             {
-                g.setColor(Color.white);
-                g.fillRect(j*brickwidth+80,i*brickheight+50,brickwidth,brickheight);
-                g.setStroke(new BasicStroke(3));
-                g.setColor(Color.black);
-                g.drawRect(j*brickwidth+80, i*brickheight+50, brickwidth, brickheight);
+                if (map[i][j]>0)
+                {
+                    g.setColor(Color.white);
+                    g.fillRect(j*brickwidth+80,i*brickheight+50,brickwidth,brickheight);
+                    g.setStroke(new BasicStroke(3));
+                    g.setColor(Color.black);
+                    g.drawRect(j*brickwidth+80, i*brickheight+50, brickwidth, brickheight);
+                }
             }
         }
     }
